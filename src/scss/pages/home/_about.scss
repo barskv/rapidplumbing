@@ -1,0 +1,91 @@
+@use "../../utils/functions/" as*;
+@use "../../utils/mixins/" as*;
+
+.about {
+  padding: 0 0 rem(80);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: calc(var(--radius-main) * 2);
+    padding: 40px;
+    height: 100%;
+    background-color: var(--color-gray-bg);
+  }
+
+  &__image {
+    height: 90px;
+    width: 110px;
+    margin-bottom: rem(16);
+
+    &-expertise {
+      width: 90px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    margin-bottom: rem(16);
+    font-size: 32px;
+    color: var(--color-black);
+    line-height: 44px;
+  }
+
+  &__description {
+    margin-bottom: rem(40);
+  }
+
+  p {
+    color: var(--color-black);
+    font-size: 20px;
+  }
+
+  .btn {
+    margin: rem(60) auto 0;
+  }
+
+  @include media(tablet) {
+    padding: rem(40) 0;
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: 1 / span 2;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      padding: 24px;
+
+      &:last-child {
+        grid-column: auto;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    .btn {
+      max-width: none;
+    }
+  }
+}

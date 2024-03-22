@@ -1,0 +1,109 @@
+@use "../../utils/functions/" as*;
+@use "../../utils/mixins/" as*;
+
+.articles {
+    background-color: var(--color-gray-bg);
+    padding: rem(80) 0;
+
+    &__main {
+        margin-top: rem(40);
+
+        .hero__inner {
+            min-height: 514px;
+            justify-content: flex-start;
+            background-color: var(--color-white);
+        }
+
+        .hero__content {
+            max-width: 500px;
+            color: var(--color-black);
+            padding-left: 80px;
+            padding-top: 80px;
+            box-sizing: content-box;
+
+            h3 {
+                font-size: 32px;
+                margin-bottom: rem(24);
+                line-height: 1.2;
+            }
+        }
+
+        .hero__description {
+            margin-bottom: rem(40);
+        }
+    }
+
+    &__grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    &__item {
+        border-radius: var(--radius-main);
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            z-index: 1;
+            background: var(--gradient-dark);
+            position: absolute;
+            inset: 0;
+        }
+
+        h3 {
+            max-width: 400px;
+            text-transform: none;
+            color: var(--color-white);
+            padding: 32px 0 32px 32px;
+            font-size: 32px;
+            line-height: 40px;
+
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .btn {
+        width: fit-content;
+
+        &.link-btn {
+            margin: rem(60) auto 0;
+        }
+    }
+
+    @include media(tablet) {
+        .hero__inner {
+            min-height: 400px;
+            background-size: auto;
+        }
+
+        .hero__content {
+            padding: 40px;
+        }
+    }
+
+    @include media(mobile-l) {
+        .hero__inner {
+            min-height: auto;
+            background-size: auto;
+        }
+
+        .hero__content {
+            box-sizing: border-box;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    @include media(mobile-m) {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}

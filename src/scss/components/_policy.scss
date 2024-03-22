@@ -1,0 +1,35 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.policy {
+  padding: rem(80) 0 rem(100);
+
+  &__inner {
+    background-color: var(--color-gray-bg);
+    padding: 40px;
+    border-radius: var(--radius-double);
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    font-size: clamp(32px, 1.6176rem + 1.3vi, 56px);
+    font-weight: var(--fw-800);
+    color: var(--color-blue);
+  }
+
+  p {
+    font-size: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  @include media(tablet) {
+    padding: rem(60) 0;
+  }
+
+  @include media(mobile-l) {
+    padding: rem(40) 0;
+  }
+}

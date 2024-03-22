@@ -1,0 +1,43 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.mission {
+  padding: rem(80) 0 rem(60);
+  background-color: var(--color-gray-bg);
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 20px;
+  }
+
+  &__item {
+    border-radius: calc(var(--radius-main) * 2);
+    padding: rem(26);
+    background-color: var(--color-white);
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 32px;
+    }
+  }
+
+  @include media(tablet) {
+    padding: rem(60) 0;
+
+    &__list {
+      grid-template-columns: repeat(2, 2fr);
+      gap: 15;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

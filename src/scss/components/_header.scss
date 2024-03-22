@@ -1,0 +1,27 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: clamp(12px, rem(20), 22px) 0;
+  width: 100%;
+  transition-property: transform, padding;
+  transition-duration: 0.15s;
+  background-color: var(--color-white);
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  @include media(mobile-m) {
+    padding: clamp(12px, 1rem, 16px) 0;
+  }
+}
+
+.bg-gray {
+  .header {
+    background-color: var(--color-gray-bg);
+  }
+}

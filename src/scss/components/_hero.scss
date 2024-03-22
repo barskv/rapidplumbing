@@ -1,0 +1,151 @@
+@use "../utils/functions/" as*;
+@use "../utils/mixins/" as*;
+
+.hero {
+  $root: &;
+  padding: rem(40) 0 rem(80);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: calc(var(--radius-main) * 2);
+    min-height: 584px;
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    z-index: 1;
+    padding: 0 rem(60);
+    width: 100%;
+    max-width: 830px;
+    color: var(--color-white);
+  }
+
+  h1 {
+    margin-bottom: rem(32);
+    font-size: clamp(2rem, 1.6176rem + 1.3vi, 3rem);
+    font-weight: var(--fw-800);
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  &--home {
+    padding: rem(80) 0 rem(100);
+    p {
+      margin-bottom: rem(72);
+    }
+  }
+
+  &--services {
+    #{$root}__inner {
+      background-position: 100%;
+    }
+  }
+
+  &--contact {
+    padding: rem(40) 0 rem(80);
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &--articles {
+    padding-bottom: 0;
+
+    #{$root}__inner {
+      min-height: 514px;
+    }
+
+    #{$root}__content {
+      max-width: calc(500px + rem(60)*2);
+      color: var(--color-black);
+
+      h2 {
+        margin-bottom: 24px;
+        font-size: 32px;
+        font-weight: var(--fw-700);
+        line-height: 40px;
+        color: var(--color-black);
+      }
+
+      p {
+        margin-bottom: 40px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &--portfolio {
+    padding-bottom: rem(80);
+  }
+
+  @include media(tablet) {
+    padding: 0;
+
+    &--services {
+      padding-bottom: rem(40);
+    }
+
+    &--articles {
+      #{$root}__content {
+        max-width: 500px;
+      }
+    }
+
+    &__inner {
+      min-height: 442px;
+    }
+
+    &__content {
+      padding: 40px 30px;
+    }
+
+    &--portfolio {
+      padding-bottom: rem(40);
+    }
+  }
+
+  @include media(mobile-l) {
+    &--services {
+      .container {
+        padding: 0;
+      }
+
+      .hero__inner {
+        position: relative;
+        padding: 20px 0;
+      }
+
+    }
+
+    &--articles {
+      #{$root}__content {
+        max-width: 400px;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    margin: 0 -16px;
+
+    &--services {
+      margin: 0;
+    }
+
+    &__inner {
+      border-radius: 0;
+    }
+
+    .btn {
+      max-width: none;
+    }
+  }
+}

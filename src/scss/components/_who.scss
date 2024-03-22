@@ -1,0 +1,65 @@
+@use "../utils/functions/" as*;
+@use "../utils/mixins/" as*;
+
+.who {
+  $root: &;
+  margin-bottom: rem(68);
+
+  &__sides {
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    gap: 80px;
+    margin-bottom: rem(16);
+
+    &-left {
+      h2,
+      p {
+        margin-bottom: rem(24);
+      }
+    }
+
+    &-right {
+      img {
+        border-radius: calc(var(--radius-main) * 2);
+      }
+    }
+  }
+
+  @include media(tablet) {
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    &__sides {
+      grid-template-columns: 1fr 1fr;
+
+      &-right {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+
+    &__sides {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    &__text {
+      margin-top: 60px;
+    }
+
+  }
+
+  @include media(mobile-m) {
+
+    &__item {
+      padding: 16px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.team {
+  overflow: hidden;
+  padding-bottom: rem(80);
+
+  h2 {
+    margin: 0 auto 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__item {
+    flex-basis: 216px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: auto;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    img {
+      border-radius: 50%;
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+
+  &__name {
+    h3 {
+      margin: 0 auto;
+      font-size: 32px;
+    }
+  
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+  
+
+  @include media(tablet) {
+    padding: rem(40) 0 rem(60);
+
+    &__item {
+      img {
+        max-width: 120px;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin-right: 0;
+      margin-top: 40px;
+      flex-basis: 40%;
+    }
+
+    &__image {
+      margin-bottom: 10px;
+    }
+
+  }
+
+  @include media(mobile-m) {
+    &__item {
+      margin-top: 40px;
+      flex-basis: 100%;
+    }
+
+  }
+}
