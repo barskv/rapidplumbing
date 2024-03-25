@@ -1,9 +1,10 @@
-@use "../utils/functions/" as*;
-@use "../utils/mixins/" as*;
+@use "../../utils/functions/" as*;
+@use "../../utils/mixins/" as*;
 
 .who {
   $root: &;
-  margin-bottom: rem(68);
+  padding-top: 0;
+  padding-bottom: rem(80);
 
   &__sides {
     display: grid;
@@ -26,9 +27,7 @@
   }
 
   @include media(tablet) {
-    margin-top: 40px;
-    margin-bottom: 30px;
-
+    padding-bottom: rem(60);
     &__sides {
       grid-template-columns: 1fr 1fr;
 
@@ -40,7 +39,6 @@
   }
 
   @include media(mobile-l) {
-
     &__sides {
       grid-template-columns: 1fr;
       gap: 20px;
@@ -49,11 +47,9 @@
     &__text {
       margin-top: 60px;
     }
-
   }
 
   @include media(mobile-m) {
-
     &__item {
       padding: 16px;
     }

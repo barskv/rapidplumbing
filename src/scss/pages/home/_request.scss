@@ -4,7 +4,7 @@
 .request {
   $root: &;
 
-  padding: rem(80) 0;
+  padding-top: rem(100);
   background-color: var(--color-gray-400);
 
   h2 {
@@ -46,8 +46,12 @@
     }
 
     &-timetable {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       background-color: #fff;
       border-bottom-left-radius: calc(var(--radius-main) * 2);
+      font-size: 20px;
 
       .timetable__item {
         >span {
@@ -67,7 +71,7 @@
   }
 
   &__form {
-    margin-top: rem(40);
+    margin-top: rem(56);
     padding: 40px;
     background-color: var(--color-white);
     border-radius: calc(var(--radius-main) * 2);
@@ -128,11 +132,22 @@
   }
 
   @include media(tablet) {
-    padding: rem(60) 0;
+    padding-top: rem(60);
 
+    &__box {
+      &-timetable {
+        font-size: 16px;
+      }
+    }
+
+    &__form {
+      margin-top: rem(40);
+    }
+    
     a {
       font-size: 24px;
     }
+
   }
 
   @include media(mobile-l) {
@@ -146,10 +161,6 @@
       &-info {
         border-bottom-left-radius: calc(var(--radius-main) * 2);
         border-bottom-right-radius: calc(var(--radius-main) * 2);
-
-        p {
-          font-size: 20px;
-        }
       }
     }
   }
@@ -173,4 +184,5 @@
     }
 
   }
+
 }

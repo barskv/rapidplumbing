@@ -2,7 +2,7 @@
 @use "../utils/mixins"as*;
 
 .policy {
-  padding: rem(80) 0 rem(100);
+  padding-top: rem(80);
 
   &__inner {
     background-color: var(--color-gray-bg);
@@ -11,7 +11,7 @@
   }
 
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
     font-size: clamp(32px, 1.6176rem + 1.3vi, 56px);
     font-weight: var(--fw-800);
     color: var(--color-blue);
@@ -26,10 +26,10 @@
   }
 
   @include media(tablet) {
-    padding: rem(60) 0;
+    padding-top: rem(60);
   }
 
   @include media(mobile-l) {
-    padding: rem(40) 0;
+    padding-top: rem(40);
   }
 }

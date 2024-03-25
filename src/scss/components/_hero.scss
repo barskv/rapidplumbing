@@ -3,7 +3,6 @@
 
 .hero {
   $root: &;
-  padding: rem(40) 0 rem(80);
 
   &__inner {
     display: flex;
@@ -19,7 +18,7 @@
 
   &__content {
     z-index: 1;
-    padding: 0 rem(60);
+    padding: 0 rem(80);
     width: 100%;
     max-width: 830px;
     color: var(--color-white);
@@ -27,7 +26,7 @@
 
   h1 {
     margin-bottom: rem(32);
-    font-size: clamp(2rem, 1.6176rem + 1.3vi, 3rem);
+    font-size: clamp(40px, 2rem + 2vi, 56px);
     font-weight: var(--fw-800);
     line-height: 1.2;
   }
@@ -37,31 +36,43 @@
   }
 
   &--home {
-    padding: rem(80) 0 rem(100);
+    padding-top: rem(80);
+
     p {
       margin-bottom: rem(72);
     }
   }
 
   &--services {
+    padding-top: rem(80);
+
     #{$root}__inner {
       background-position: 100%;
     }
   }
 
   &--contact {
-    padding: rem(40) 0 rem(80);
-
     p {
       margin-bottom: 0;
     }
   }
 
   &--articles {
+    padding-top: rem(80);
     padding-bottom: 0;
+
+    h1 {
+      margin-bottom: rem(40);
+      text-transform: capitalize;
+      color: var(--color-blue);
+      font-weight: var(--fw-800);
+      line-height: 1.2;
+    }
 
     #{$root}__inner {
       min-height: 514px;
+      background-color: var(--color-white);
+      position: relative;
     }
 
     #{$root}__content {
@@ -84,19 +95,21 @@
   }
 
   &--portfolio {
-    padding-bottom: rem(80);
+    padding: rem(80) 0;
   }
 
   @include media(tablet) {
-    padding: 0;
+    padding-top: 0;
 
     &--services {
-      padding-bottom: rem(40);
+      margin: 0;
+      padding-bottom: rem(60);
     }
 
     &--articles {
+      padding-top: rem(30);
       #{$root}__content {
-        max-width: 500px;
+        max-width: 400px;
       }
     }
 
@@ -109,23 +122,11 @@
     }
 
     &--portfolio {
-      padding-bottom: rem(40);
+      padding-bottom: rem(60);
     }
   }
 
   @include media(mobile-l) {
-    &--services {
-      .container {
-        padding: 0;
-      }
-
-      .hero__inner {
-        position: relative;
-        padding: 20px 0;
-      }
-
-    }
-
     &--articles {
       #{$root}__content {
         max-width: 400px;
@@ -136,8 +137,10 @@
   @include media(mobile-m) {
     margin: 0 -16px;
 
-    &--services {
-      margin: 0;
+    &--portfolio {
+      #{$root}__inner {
+        background-position: 80%;
+      }
     }
 
     &__inner {

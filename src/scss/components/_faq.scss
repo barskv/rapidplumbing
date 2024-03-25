@@ -23,11 +23,6 @@
     background-color: var(--color-white);
 
     &[open] {
-
-      #{$root}__question {
-        padding-bottom: 10px;
-      }
-
       #{$root}__question::before {
         rotate: 180deg;
       }
@@ -37,7 +32,6 @@
   &__question {
     position: relative;
     padding: 40px rem(100) 40px 40px;
-    transition: 0.3s padding ease-out;
     font-weight: var(--fw-700);
     font-size: clamp(20px, 1.1017rem + 0.7486vi, 32px);
     line-height: 1.4;

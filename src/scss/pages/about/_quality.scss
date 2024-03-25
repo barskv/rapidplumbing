@@ -2,7 +2,8 @@
 @use "../../utils/mixins/"as*;
 
 .quality {
-  padding-bottom: rem(80);
+  padding-top: 0;
+  
   background-color: var(--color-gray-bg);
 
   h2 {

@@ -2,7 +2,7 @@
 @use "../../utils/mixins/" as*;
 
 .about {
-  padding: 0 0 rem(80);
+  padding-top: 0;
 
   &__grid {
     display: grid;
@@ -31,10 +31,6 @@
     }
   }
 
-  h2 {
-    margin-bottom: 40px;
-  }
-
   h3 {
     margin-bottom: rem(16);
     font-size: 32px;
@@ -52,12 +48,13 @@
   }
 
   .btn {
-    margin: rem(60) auto 0;
+    margin: rem(80) auto 0;
   }
 
   @include media(tablet) {
-    padding: rem(40) 0;
-
+    .btn {
+      margin-top: rem(40);
+    }
     &__grid {
       grid-template-columns: repeat(2, 1fr);
     }

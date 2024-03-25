@@ -3,8 +3,7 @@
 
 .service {
   $root: &;
-
-  padding-bottom: rem(80);
+  padding-top: 0;
 
   &__block {
     margin-top: 20px;
@@ -55,27 +54,6 @@
     }
   }
 
-  // &__grid {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   gap: 20px;
-
-  //   &:not(:last-child) {
-  //     margin-bottom: rem(60);
-  //   }
-
-  //   &:nth-child(even) {
-  //     #{$root}__image {
-  //       grid-column: 1 / 2;
-  //     }
-
-  //     #{$root}__content {
-  //       grid-column: 2 / 3;
-  //       grid-row: 1 / 2;
-  //     }
-  //   }
-  // }
-
   &__image {
     margin-top: 20px;
 
@@ -98,8 +76,6 @@
   }
 
   @include media(mobile-l) {
-    padding: 40px 0;
-
     &__grid {
       grid-template-columns: 1fr;
     }

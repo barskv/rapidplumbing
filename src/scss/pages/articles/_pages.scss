@@ -2,15 +2,7 @@
 @use "../../utils/mixins/" as*;
 
 .pages {
-    padding-bottom: rem(80);
-
-    &__title {
-        font-size: clamp(2rem, 2rem + 1vi, 56px);
-        text-transform: capitalize;
-        color: var(--color-blue);
-        font-weight: var(--fw-800);
-        line-height: 1.2;
-    }
+    padding-top: 0;
 
     &__grid {
         margin-top: 40px;
@@ -28,7 +20,6 @@
         img {
             width: 100%;
             max-height: 636px;
-            min-height: 392px;
         }
 
         a {

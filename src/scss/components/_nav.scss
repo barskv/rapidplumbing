@@ -1,5 +1,5 @@
-@use "../utils/functions/"as*;
-@use "../utils/mixins/"as*;
+@use "../utils/functions/" as*;
+@use "../utils/mixins/" as*;
 
 .nav {
   $root: &;
@@ -13,8 +13,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2px;
 
-    @include media(mobile-l) {
+    @include media(tablet) {
       position: fixed;
       left: 0;
       top: 0;
@@ -35,52 +36,31 @@
   &__list {
     display: flex;
     align-items: center;
-
-    @include media(mobile-l) {
-      z-index: -1;
-      flex-direction: column;
-    }
   }
 
   &__item {
-    &:not(:last-of-type, .footer .nav__item) {
+    &:not(:last-of-type) {
       margin-right: 24px;
-
-      @include media(mobile-l) {
-        margin-right: 0;
-      }
-    }
-
-    @include media(mobile-l) {
-      margin-bottom: 30px;
     }
   }
 
   &__link {
     font-weight: var(--fw-700);
     font-size: 16px;
-    color: var( --color-blue);
+    color: var(--color-blue);
 
     &.true {
-      border-bottom: 2px solid var(--color-blue );
+      border-bottom: 2px solid var(--color-blue);
     }
   }
 
   &__buttons {
     display: flex;
     align-items: center;
-    margin-top: 4px;
 
     &-menu {
       display: none;
     }
-
-    .btn {
-      @include media(mobile-l) {
-        margin: 0 auto;
-      }
-    }
-    
   }
 
   &__signup {
@@ -88,19 +68,60 @@
     margin-right: 12px;
   }
 
-  @include media(mobile-l) {
-    &__buttons {
-      display: none;
+  @include media(tablet-wide) {
+    .logo {
+      max-width: 140px;
+    }
 
-      &-menu {
-        display: flex;
+    &__item {
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+
+    &__link {
+      font-size: 14px;
+    }
+
+    &__buttons {
+      margin-right: 40px;
+
+      .btn {
+        padding-left: 12px;
+        padding-right: 34px;
       }
     }
   }
 
-  @include media(mobile-m) {
-    .logo {
-      max-width: 120px;
+  @include media(tablet) {
+    &__list {
+        z-index: -1;
+        flex-direction: column;
+    }
+    
+    &__item {
+      margin-bottom: 30px;
+      
+      &:not(:last-of-type) {
+        margin-right: 0;
+      }
     }
   }
+
+  @include media(mobile-l) {
+    &__buttons {
+      display: none;
+      margin-right: 0;
+
+      &-menu {
+        display: flex;
+      }
+
+      .btn {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include media(mobile-m) {}
 }

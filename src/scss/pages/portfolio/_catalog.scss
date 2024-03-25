@@ -3,8 +3,7 @@
 
 .catalog {
     $root: &;
-    
-    padding-bottom: rem(80);
+    padding-top: 0;
 
     &__header {
         h2 {

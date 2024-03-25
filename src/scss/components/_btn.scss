@@ -100,8 +100,4 @@
     width: fit-content;
     cursor: pointer;
   }
-
-  @include media(tablet) {
-    font-size: 20px;
-  }
 }

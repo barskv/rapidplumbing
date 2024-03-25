@@ -2,7 +2,7 @@
 @use "../../utils/mixins/" as*;
 
 .article {
-    padding: rem(60) 0 rem(80);
+    padding-top: rem(80);
 
     &__title {
         font-size: clamp(2rem, 2rem + 1vi, 56px);
@@ -77,6 +77,10 @@
         &:last-child {
             grid-column: 1 / span 2;
         }
+    }
+    
+    @include media(tablet) {
+        padding-top: rem(60);
     }
 
     @include media(mobile-m) {

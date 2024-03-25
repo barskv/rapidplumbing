@@ -3,7 +3,7 @@
 
 .approach {
   $root: &;
-  padding: rem(40) 0 rem(80);
+  padding-top: rem(40);
   background: url('../images/about/approach.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,6 +24,7 @@
     }
 
     h3 {
+      font-size: 32px;
       line-height: 44px;
     }
   }
